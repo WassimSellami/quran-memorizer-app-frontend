@@ -71,11 +71,9 @@
 
         <button (click)="SubscribeToEmailReminder()">{{'BUTTON.REMINDER.SUBSCRIBE' |
             translate}}</button>
-        <input type="email" [(ngModel)]='formEmail.subscribeEmail' required />
-
+        <input type="email" [(ngModel)]='formEmail.email' required />
         <button (click)="UnsubscribeFromEmailReminder()">{{'BUTTON.REMINDER.UNSUBSCRIBE' |
             translate}}</button>
-        <input type="email" [(ngModel)]='formEmail.unsubscribeEmail' required />
     </div>
     <div *ngIf="!isFullPlanReady">
         <h4>{{'MESSAGE.GENERATING_FULL_PLAN' | translate}}</h4>

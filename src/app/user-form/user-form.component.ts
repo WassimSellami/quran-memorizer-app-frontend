@@ -29,8 +29,7 @@ export class UserFormComponent {
     'startDate': '2025-07-11',
   };
   formEmail = {
-    'subscribeEmail': 'wassimsellami20@gmail.com',
-    'unsubscribeEmail': 'wassimsellami20@gmail.com'
+    'email': 'wassimsellami20@gmail.com',
   }
 
 
@@ -164,7 +163,7 @@ export class UserFormComponent {
   }
 
   SubscribeToEmailReminder(): void {
-    this.emailService.subscribeToEmailReminder(this.formEmail.subscribeEmail, this.fullPlanCSV).subscribe({
+    this.emailService.subscribeToEmailReminder(this.formEmail.email, this.fullPlanCSV).subscribe({
       next: (response: any) => {
         window.alert(response.message)
       }
@@ -172,7 +171,7 @@ export class UserFormComponent {
   }
 
   UnsubscribeFromEmailReminder(): void {
-    this.emailService.unsubscribeFromEmailReminder(this.formEmail.unsubscribeEmail).subscribe({
+    this.emailService.unsubscribeFromEmailReminder(this.formEmail.email).subscribe({
       next: (response: any) => {
         window.alert(response.message)
       }
