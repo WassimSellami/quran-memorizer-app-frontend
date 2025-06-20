@@ -1,0 +1,46 @@
+{
+    "APPLICATION_TITLE": "مخطط حفظ القرآن",
+    "PLAN_PREVIEW_LABEL": "تصوّر أولي للخطة",
+    "ESTIMATED_DATE_LABEL": "تاريخ الانتهاء المتوقع: ",
+    "NUMBER_LABEL": "رقم ",
+    "STEPS": {
+        "DESCRIPTIONS": {
+            "MEMORIZATION_UNIT": "كم تريد أن تحفظ يوميًا ؟",
+            "START_UNIT": "من أين تريد أن تبدأ الحفظ ؟",
+            "END_UNIT": "أين تريد أن تنتهي ؟",
+            "MEMORIZATION_DAYS_PER_CYCLE": "كم عدد أيام الحفظ في كل دورة ؟",
+            "REVISION_DAYS_PER_CYCLE": "كم عدد أيام المراجعة في كل دورة ؟",
+            "REST_DAYS_PER_CYCLE": "كم عدد أيام الراحة في كل دورة ؟",
+            "START_DATE": "متى تريد أن تبدأ رحلة الحفظ ؟",
+            "PREVIEW_PLAN": "التصوّر الأولي للخطة",
+            "FULL_PLAN": "هذا تصوّر أولي لخطة الحفظ الخاصة بك، إذا أعجبتك يمكنك توليد الخطة الكاملة",
+            "DOWNLOAD": "تهانينا ! خطتك جاهزة للتنزيل"
+        }
+    },
+    "THOMN_LABEL": "ثمن",
+    "PAGE_LABEL": "صفحة",
+    "BUTTON": {
+        "NEXT": "التالي",
+        "BACK": "السابق",
+        "FULL_PLAN": "توليد الخطة الكاملة",
+        "DOWNLOAD_FULL_PLAN": "تحميل الخطة الكاملة",
+        "PREVIEW": "توليد تصوّر أولي للخطة"
+    },
+    "MESSAGE": {
+        "GENERATING_FULL_PLAN": "يتم توليد الخطة الكاملة ...",
+        "GENERATING_PLAN_PREVIEW": "يتم توليد تصوّر أولي للخطة ...",
+        "HAPPY_MEMORIZATION": "حفظًا مباركًا"
+    },
+    "CSV_HEADERS": {
+        "DATE": "التاريخ",
+        "TASK": "الواجب اليومي",
+        "FROM": "من",
+        "TO": "إلى"
+    },
+    "TASK_LABELS": {
+        "MEMORIZE": "حفظ",
+        "REVISE": "مراجعة",
+        "MEMORIZE_PLUS_REVISE": "حفظ + مراجعة",
+        "REST": "راحة"
+    }
+}

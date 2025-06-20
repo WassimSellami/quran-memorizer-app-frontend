@@ -1,0 +1,88 @@
+<h2 [translate]="'STEPS.DESCRIPTIONS.' + currentStep"></h2>
+
+<div *ngIf="currentStepNumber === 1">
+    <select [(ngModel)]='formData.memorizationUnit' required>
+        <option *ngFor="let option of unitTypeOptions" [value]="option.value">
+            {{option.label | translate}}
+        </option>
+    </select>
+</div>
+
+<div *ngIf="currentStepNumber === 2">
+    <label>{{unitTypeOptions[formData.memorizationUnit].label | translate}} {{'NUMBER_LABEL' | translate}}</label>
+    <input type="text" [(ngModel)]='formData.startUnit' required />
+</div>
+
+<div *ngIf="currentStepNumber === 3">
+    <label>{{unitTypeOptions[formData.memorizationUnit].label | translate}} {{'NUMBER_LABEL' | translate}}</label>
+    <input type="text" [(ngModel)]='formData.endUnit' required />
+</div>
+
+<div *ngIf="currentStepNumber === 4">
+    <input type="number" [(ngModel)]='formData.memorizationDaysPerCycle' required />
+</div>
+
+<div *ngIf="currentStepNumber === 5">
+    <input type="text" [(ngModel)]='formData.revisionDaysPerCycle' required />
+</div>
+
+<div *ngIf="currentStepNumber === 6">
+    <input type="number" [(ngModel)]='formData.restDaysPerCycle' required />
+</div>
+
+<div *ngIf="currentStepNumber === 7">
+    <input type="date" [(ngModel)]='formData.startDate' required />
+</div>
+
+<div *ngIf="currentStepNumber === 8">
+    <pre>{{ getFormattedSummary() }}</pre>
+</div>
+
+<div *ngIf="currentStepNumber === 9">
+    <div *ngIf="isPreviewPlanReady" class="table-wrapper">
+        <h4>{{'ESTIMATED_DATE_LABEL' | translate}}{{estimatedCompletionDate}}</h4>
+        <h4>{{'PLAN_PREVIEW_LABEL' | translate}}</h4>
+        <table class="preview-table">
+            <thead>
+                <tr>
+                    <th *ngFor="let header of csvHeaders">{{ header | translate }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of previewPlanRows">
+                    <td *ngFor="let cell of row; let i = index">
+                        {{ getTranslatedTask(cell, csvHeaders[i]) | translate }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div *ngIf="!isPreviewPlanReady">
+        <h4>{{'MESSAGE.GENERATING_PLAN_PREVIEW' | translate}}</h4>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </div>
+</div>
+
+<div *ngIf="currentStepNumber === 10">
+    <div *ngIf="isFullPlanReady">
+        <button (click)="downloadFullPlan()" [disabled]="isDownloading">{{'BUTTON.DOWNLOAD_FULL_PLAN' |
+            translate}}</button>
+        <h3>{{'MESSAGE.HAPPY_MEMORIZATION' | translate}}</h3>
+    </div>
+    <div *ngIf="!isFullPlanReady">
+        <h4>{{'MESSAGE.GENERATING_FULL_PLAN' | translate}}</h4>
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </div>
+</div>
+
+<div>
+    <button *ngIf="currentStepNumber !== 1" (click)="goToPreviousStep()">{{'BUTTON.BACK' | translate}}</button>
+    <button *ngIf="currentStepNumber < 8" (click)="goToNextStep()">{{'BUTTON.NEXT' | translate}}</button>
+    <button *ngIf="currentStepNumber === 8" (click)=" generatePreviewPlan()">{{'BUTTON.PREVIEW' | translate}}</button>
+    <button *ngIf="currentStepNumber === 9 && isPreviewPlanReady" (click)="generateFullPlan()">{{'BUTTON.FULL_PLAN' |
+        translate}}</button>
+</div>
+
+<mat-progress-bar mode="determinate" color="primary" [value]="getProgress()">
+</mat-progress-bar>

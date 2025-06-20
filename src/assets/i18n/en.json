@@ -1,0 +1,46 @@
+{
+    "APPLICATION_TITLE": "Quran Memorization Planner",
+    "PLAN_PREVIEW_LABEL": "Plan Preview",
+    "ESTIMATED_DATE_LABEL": "Estimated Completion date: ",
+    "NUMBER_LABEL": "Number ",
+    "STEPS": {
+        "DESCRIPTIONS": {
+            "MEMORIZATION_UNIT": "How much do you want to memorize per day?",
+            "START_UNIT": "Where do you want to start memorizing from?",
+            "END_UNIT": "Where do you want to end?",
+            "MEMORIZATION_DAYS_PER_CYCLE": "How many days do you want to memorize per cycle?",
+            "REVISION_DAYS_PER_CYCLE": "How many days do you want to revise per cycle?",
+            "REST_DAYS_PER_CYCLE": "How many days do you want to rest per cycle?",
+            "START_DATE": "When Do you want to start your trip?",
+            "PREVIEW_PLAN": "Done! Now you can generate a preview of your plan!",
+            "FULL_PLAN": "Here is a preview of your plan! If you like it you can now generate the full plan",
+            "DOWNLOAD": "Congratulations! Your plan is ready to download!"
+        }
+    },
+    "THOMN_LABEL": "Thomn",
+    "PAGE_LABEL": "Page",
+    "BUTTON": {
+        "NEXT": "Next",
+        "BACK": "Back",
+        "FULL_PLAN": "Generate Full Plan",
+        "DOWNLOAD_FULL_PLAN": "Download Full Plan",
+        "PREVIEW": "Generate Preview"
+    },
+    "MESSAGE": {
+        "GENERATING_FULL_PLAN": "Generating Full Plan ...",
+        "GENERATING_PLAN_PREVIEW": "Generating Plan Preview ...",
+        "HAPPY_MEMORIZATION": "Happy Memorization!"
+    },
+    "CSV_HEADERS": {
+        "DATE": "Date",
+        "TASK": "Daily Task",
+        "FROM": "From",
+        "TO": "To"
+    },
+    "TASK_LABELS": {
+        "MEMORIZE": "Memorize",
+        "REVISE": "Revise",
+        "MEMORIZE_PLUS_REVISE": "Memorize + Revise",
+        "REST": "Rest"
+    }
+}
