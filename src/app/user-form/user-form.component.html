@@ -56,7 +56,6 @@
                 </tr>
             </tbody>
         </table>
-
     </div>
     <div *ngIf="!isPreviewPlanReady">
         <h4>{{'MESSAGE.GENERATING_PLAN_PREVIEW' | translate}}</h4>
@@ -69,6 +68,14 @@
         <button (click)="downloadFullPlan()" [disabled]="isDownloading">{{'BUTTON.DOWNLOAD_FULL_PLAN' |
             translate}}</button>
         <h3>{{'MESSAGE.HAPPY_MEMORIZATION' | translate}}</h3>
+
+        <button (click)="SubscribeToEmailReminder()">{{'BUTTON.REMINDER.SUBSCRIBE' |
+            translate}}</button>
+        <input type="email" [(ngModel)]='formEmail.subscribeEmail' required />
+
+        <button (click)="UnsubscribeFromEmailReminder()">{{'BUTTON.REMINDER.UNSUBSCRIBE' |
+            translate}}</button>
+        <input type="email" [(ngModel)]='formEmail.unsubscribeEmail' required />
     </div>
     <div *ngIf="!isFullPlanReady">
         <h4>{{'MESSAGE.GENERATING_FULL_PLAN' | translate}}</h4>

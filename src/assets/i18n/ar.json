@@ -20,6 +20,11 @@
     "THOMN_LABEL": "ثمن",
     "PAGE_LABEL": "صفحة",
     "BUTTON": {
+        "REMINDER": {
+            "SUBSCRIBE": "gdssd",
+            "UNSUBSCRIBE": "sgd"
+        },
+        "START": "احصل على خطتي الآن",
         "NEXT": "التالي",
         "BACK": "السابق",
         "FULL_PLAN": "توليد الخطة الكاملة",
@@ -27,6 +32,7 @@
         "PREVIEW": "توليد تصوّر أولي للخطة"
     },
     "MESSAGE": {
+        "WELCOME": "هل أنت مستعد للتخطيط لرحلة حفظ القرآن الكريم؟",
         "GENERATING_FULL_PLAN": "يتم توليد الخطة الكاملة ...",
         "GENERATING_PLAN_PREVIEW": "يتم توليد تصوّر أولي للخطة ...",
         "HAPPY_MEMORIZATION": "حفظًا مباركًا"

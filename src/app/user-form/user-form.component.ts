@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { GptService } from '../services/gpt.service';
+import { EmailService } from '../services/email.service';
 import { TranslateService } from '@ngx-translate/core';
 
 enum UnitType { Thomn = 0, Page = 1 }
@@ -11,7 +12,7 @@ enum UnitType { Thomn = 0, Page = 1 }
 })
 
 export class UserFormComponent {
-  constructor(private gptService: GptService, private translate: TranslateService) { }
+  constructor(private gptService: GptService, private emailService: EmailService, private translate: TranslateService) { }
 
   unitTypeOptions = [
     { label: 'THOMN_LABEL', value: UnitType.Thomn },
@@ -21,18 +22,23 @@ export class UserFormComponent {
   formData = {
     'memorizationUnit': UnitType.Thomn,
     'startUnit': 'H1T1',
-    'endUnit': 'H1T8',
+    'endUnit': 'H1T2',
     'memorizationDaysPerCycle': 2,
     'revisionDaysPerCycle': 2,
     'restDaysPerCycle': 1,
-    'startDate': '2025-06-11',
+    'startDate': '2025-07-11',
   };
+  formEmail = {
+    'subscribeEmail': 'wassimsellami20@gmail.com',
+    'unsubscribeEmail': 'wassimsellami20@gmail.com'
+  }
+
 
   steps = ['MEMORIZATION_UNIT', 'START_UNIT', 'END_UNIT', 'MEMORIZATION_DAYS_PER_CYCLE', 'REVISION_DAYS_PER_CYCLE', 'REST_DAYS_PER_CYCLE', 'START_DATE', 'PREVIEW_PLAN', 'FULL_PLAN', 'DOWNLOAD'];
 
   csvHeaders: string[] = [];
   previewPlanRows: string[][] = [];
-  fullPlanCSV: string = ''
+  fullPlanCSV: string = 'Date,Task,From,To\n2025-07-11,Memorize,H1T1,H1T1\n2025-07-12,Memorize+Revise,H1T1,H1T2\n2025-07-13,Revise,H1T1,H1T2\n2025-07-14,Revise,H1T1,H1T2\n2025-07-15,Rest,-,-\n'
 
   estimatedCompletionDate: string = '';
   isPreviewPlanReady: boolean = false
@@ -155,5 +161,21 @@ export class UserFormComponent {
 
     window.URL.revokeObjectURL(url);
     this.isDownloading = false;
+  }
+
+  SubscribeToEmailReminder(): void {
+    this.emailService.subscribeToEmailReminder(this.formEmail.subscribeEmail, this.fullPlanCSV).subscribe({
+      next: (response: any) => {
+        window.alert(response.message)
+      }
+    });
+  }
+
+  UnsubscribeFromEmailReminder(): void {
+    this.emailService.unsubscribeFromEmailReminder(this.formEmail.unsubscribeEmail).subscribe({
+      next: (response: any) => {
+        window.alert(response.message)
+      }
+    });
   }
 }

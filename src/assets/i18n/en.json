@@ -20,6 +20,11 @@
     "THOMN_LABEL": "Thomn",
     "PAGE_LABEL": "Page",
     "BUTTON": {
+        "REMINDER": {
+            "SUBSCRIBE": "Subscribe to Daily Email Reminder",
+            "UNSUBSCRIBE": "Unsubscribe from Daily Reminder"
+        },
+        "START": "Get my plan now",
         "NEXT": "Next",
         "BACK": "Back",
         "FULL_PLAN": "Generate Full Plan",
@@ -27,6 +32,7 @@
         "PREVIEW": "Generate Preview"
     },
     "MESSAGE": {
+        "WELCOME": "Are you ready to plan your Quran memorization trip?",
         "GENERATING_FULL_PLAN": "Generating Full Plan ...",
         "GENERATING_PLAN_PREVIEW": "Generating Plan Preview ...",
         "HAPPY_MEMORIZATION": "Happy Memorization!"

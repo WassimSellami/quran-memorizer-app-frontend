@@ -6,6 +6,8 @@ import { Observable, map } from 'rxjs';
   providedIn: 'root'
 })
 export class GptService {
+  // readonly API_URL = 'https://quran-memorizer-app-backend.onrender.com/api/gpt';
+  readonly API_URL = 'http://localhost:3000/api/gpt';
 
   constructor(private http: HttpClient) { }
 
@@ -14,7 +16,7 @@ export class GptService {
       userInput: JSON.stringify(userInput)
     }
     return this.http
-      .post<{ response: any }>('http://localhost:3000/api/gpt/plan/preview', body)
+      .post<{ response: any }>(`${this.API_URL}/plan/preview`, body)
       .pipe(
         map(response => response.response)
       );
@@ -24,7 +26,7 @@ export class GptService {
       userInput: JSON.stringify(userInput)
     }
     return this.http
-      .post<{ response: any }>('http://localhost:3000/api/gpt/plan/full', body)
+      .post<{ response: any }>(`${this.API_URL}/plan/full`, body)
       .pipe(
         map(response => response.response)
       );
