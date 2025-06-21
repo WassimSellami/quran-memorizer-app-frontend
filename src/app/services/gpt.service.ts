@@ -6,8 +6,8 @@ import { Observable, map } from 'rxjs';
   providedIn: 'root'
 })
 export class GptService {
-  // readonly API_URL = 'https://quran-memorizer-app-backend.onrender.com/api/gpt';
-  readonly API_URL = 'http://localhost:3000/api/gpt';
+  readonly API_URL = 'https://quran-memorizer-app-backend.onrender.com/api/gpt';
+  // readonly API_URL = 'http://localhost:3000/api/gpt';
 
   constructor(private http: HttpClient) { }
 

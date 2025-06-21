@@ -21,15 +21,15 @@ export class UserFormComponent {
 
   formData = {
     'memorizationUnit': UnitType.Thomn,
-    'startUnit': 'H1T1',
-    'endUnit': 'H1T2',
+    'startUnit': 'H18T5',
+    'endUnit': 'H31T3',
     'memorizationDaysPerCycle': 2,
     'revisionDaysPerCycle': 2,
     'restDaysPerCycle': 1,
-    'startDate': '2025-07-11',
+    'startDate': '2025-06-09',
   };
   formEmail = {
-    'email': 'wassimsellami20@gmail.com',
+    'email': 'toEmail@gmail.com',
   }
 
 
@@ -37,7 +37,7 @@ export class UserFormComponent {
 
   csvHeaders: string[] = [];
   previewPlanRows: string[][] = [];
-  fullPlanCSV: string = 'Date,Task,From,To\n2025-07-11,Memorize,H1T1,H1T1\n2025-07-12,Memorize+Revise,H1T1,H1T2\n2025-07-13,Revise,H1T1,H1T2\n2025-07-14,Revise,H1T1,H1T2\n2025-07-15,Rest,-,-\n'
+  fullPlanCSV: string = ''
 
   estimatedCompletionDate: string = '';
   isPreviewPlanReady: boolean = false
@@ -137,11 +137,13 @@ export class UserFormComponent {
     this.isFullPlanReady = false;
     this.goToNextStep();
     this.gptService.generateFullPlan(this.formattedUserInput).subscribe({
+
       next: (response: any) => {
         this.fullPlanCSV = response.planCSV;
         this.isFullPlanReady = true;
       },
       error: (err: any) => {
+        this.isFullPlanReady = true;
         console.error('Error getting full plan:', err);
       }
     });

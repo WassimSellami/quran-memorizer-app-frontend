@@ -21,8 +21,8 @@
     "PAGE_LABEL": "صفحة",
     "BUTTON": {
         "REMINDER": {
-            "SUBSCRIBE": "gdssd",
-            "UNSUBSCRIBE": "sgd"
+            "SUBSCRIBE": "اشترك في التذكير اليومي عبر البريد الإلكتروني",
+            "UNSUBSCRIBE": "إلغاء الاشتراك من التذكير اليومي"
         },
         "START": "احصل على خطتي الآن",
         "NEXT": "التالي",

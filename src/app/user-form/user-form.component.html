@@ -68,12 +68,6 @@
         <button (click)="downloadFullPlan()" [disabled]="isDownloading">{{'BUTTON.DOWNLOAD_FULL_PLAN' |
             translate}}</button>
         <h3>{{'MESSAGE.HAPPY_MEMORIZATION' | translate}}</h3>
-
-        <button (click)="SubscribeToEmailReminder()">{{'BUTTON.REMINDER.SUBSCRIBE' |
-            translate}}</button>
-        <input type="email" [(ngModel)]='formEmail.email' required />
-        <button (click)="UnsubscribeFromEmailReminder()">{{'BUTTON.REMINDER.UNSUBSCRIBE' |
-            translate}}</button>
     </div>
     <div *ngIf="!isFullPlanReady">
         <h4>{{'MESSAGE.GENERATING_FULL_PLAN' | translate}}</h4>
@@ -91,3 +85,17 @@
 
 <mat-progress-bar mode="determinate" color="primary" [value]="getProgress()">
 </mat-progress-bar>
+
+<br>
+<br>
+<div *ngIf="currentStepNumber === 10 && isFullPlanReady">
+    <button (click)="SubscribeToEmailReminder()">{{'BUTTON.REMINDER.SUBSCRIBE' |
+        translate}}</button>
+</div>
+<div>
+    <input type="email" [(ngModel)]='formEmail.email' required />
+</div>
+<div>
+    <button (click)="UnsubscribeFromEmailReminder()">{{'BUTTON.REMINDER.UNSUBSCRIBE' |
+        translate}}</button>
+</div>

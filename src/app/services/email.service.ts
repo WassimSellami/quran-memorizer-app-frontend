@@ -6,7 +6,8 @@ import { Observable, map } from 'rxjs';
   providedIn: 'root'
 })
 export class EmailService {
-  readonly API_URL = 'http://localhost:3000/api/email';
+  readonly API_URL = 'https://quran-memorizer-app-backend.onrender.com/api/email';
+  // readonly API_URL = 'http://localhost:3000/api/email';
 
   constructor(private http: HttpClient) { }
 
